@@ -1,7 +1,7 @@
 
 var skillsOvermij = document.querySelector('main>section>div');
-var contentProjecten = document.querySelector('.projecten main>article:first-of-type');
-var mainProjecten = document.querySelector('.projecten main');
+var contentProjecten = document.querySelector('.projecten main>article');
+var mainProjecten = document.querySelector('.projecten main>section');
 
 
 function contentSkillsWeergeven () {

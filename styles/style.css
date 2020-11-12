@@ -85,14 +85,23 @@ a:last-of-type {
     }
 }
 
-main {
+body {
     position: relative;
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
-main::-webkit-scrollbar {
+body::-webkit-scrollbar {
     width: 0;
     background: transparent;
+}
+
+section::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+section {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 main>article {
@@ -181,19 +190,19 @@ main>section article ul {
 .projecten main {
     overflow-x: scroll;
     overflow-y: hidden;
-    height: 87vh;
+    height: 100vh;
     width: 100vw;
     display: flex;
     align-items: center;
 }
-.projecten main>article {
+.projecten main article {
     position: relative;
     left: 90vw;
     height: 64.5vw;
     max-height: 32.1em;
     padding: 0;
 }
-.projecten main>article:first-of-type {
+.projecten main>article {
     position: fixed;
     left: 0;
     top: 32.4vh;
@@ -204,13 +213,25 @@ main>section article ul {
     padding: 0;
     transition: 300ms ease-in;
 }
-.projecten main>article:first-of-type.uitfaden {
+.projecten main>article.uitfaden {
     opacity: 0;
     transition: 500ms ease-out;
 }
-.projecten main>article:not(:first-of-type) {
+.projecten main>section {
+    display: flex;
+    background: none;
+    overflow-x: scroll;
+    overflow-y: hidden;
     z-index: 1;
+    width: 100vw;
+    margin-top: 0;
+    padding-bottom: 0;
+}
+.projecten main>section article {
     margin: 0 2.5em 0 0;
+    width: 110vw;
+}
+.projecten main>section article h2 {
     width: 100vw;
 }
 /* .projecten main>article:last-of-type {
@@ -229,7 +250,7 @@ main>section article ul {
     text-align: left;
     font-style: italic;
 }
-.projecten main>article img {
+.projecten main>section article img {
     height: 64.5vw;
     width: auto;
     max-height: 32.1em;
@@ -240,7 +261,7 @@ main>section article ul {
 /* #projecten main>article:first-of-type img {
     object-position: 0 0;
 } */
-.projecten main>article img:hover {
+.projecten main>section article img:hover {
     opacity: 0.4;
     transition: 500ms;
     transform: scale(1.05);
